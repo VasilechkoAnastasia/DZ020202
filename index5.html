@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="library">
+        <h1>Список книг</h1>
+        <ul>
+            <li onclick="selectBook(this)">1. Идеальный программист</li>
+            <li onclick="selectBook(this)">2. Совершенный код</li>
+            <li onclick="selectBook(this)">3. Карьера программиста</li>
+            <li onclick="selectBook(this)">4. Путь программиста</li>
+            <li onclick="selectBook(this)">5. Алгоритмы, построение и анализ</li>
+            <li onclick="selectBook(this)">6. Жемчужины программирования</li>
+            <li onclick="selectBook(this)">7. Искусство программирования</li>
+        </ul>
+    </div>
+
+    <script>
+        let chooseBook = null;
+        function selectBook(book) {
+            if (chooseBook) {
+                chooseBook.classList.remove('selected');
+            }
+            book.classList.add('selected');
+            chooseBook = book;
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFEFD5;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            font-size: 25px;
+        }
+
+        .selected {
+            background-color: #FF7F50;
+        }
+    </style>
+</body>
+
+</html>

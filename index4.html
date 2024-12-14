@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid">
+        <div id="light">
+            <div class="lightColor" id="red"></div>
+            <div class="lightColor" id="yellow"></div>
+            <div class="lightColor" id="green"></div>
+        </div>
+
+        <button onclick="nextColor()">Next</button>
+    </div>
+    <script>
+        let currentColor = "red";
+
+        function nextColor() {
+            let redLight = document.getElementById("red");
+            let yellowLight = document.getElementById("yellow");
+            let greenLight = document.getElementById("green");
+
+            redLight.style.backgroundColor = "#A9A9A9";
+            yellowLight.style.backgroundColor = "#A9A9A9";
+            greenLight.style.backgroundColor = "#A9A9A9";
+
+            if (currentColor === "red") {
+                yellowLight.style.backgroundColor = "yellow";
+                currentColor = "yellow";
+            }
+            else if (currentColor === "yellow") {
+                greenLight.style.backgroundColor = "green";
+                currentColor = "green";
+            }
+            else {
+                redLight.style.backgroundColor = "red";
+                currentColor = "red";
+            }
+        }
+    </script>
+
+    <style>
+
+        #light {
+            display: inline-block;
+            background: #D3D3D3;
+            border: solid 2px #A9A9A9;
+            padding: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .lightColor {
+            display: inline-block;
+            background: #A9A9A9;
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            margin: 5px;
+        }
+
+        button {
+            display: block;
+            padding: 70px;
+            font-size: 50px;
+            font-family:'Times New Roman', Times, serif
+        }
+
+        #red {
+            background: red;
+        }
+    </style>
+</body>
+
+</html>
